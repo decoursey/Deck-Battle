@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -22,3 +23,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+=======
+# Deck-Battle
+Deck Battle Project
+>>>>>>> cab98b5c0286f71640dfeae549e61d1378a51a34
