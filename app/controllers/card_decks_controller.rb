@@ -1,5 +1,9 @@
 class CardDecksController < ApplicationController
+    def index
+        @cardDeck = CardDeck.all
+    end
     def new
+        @cardDeck = CardDeck.new
     end
     
     def show
@@ -15,7 +19,7 @@ class CardDecksController < ApplicationController
     
     private
         def cardDeck_params
-            params.require(:CardDeck).permit(:name)
+            params.require(:cardDeck).permit(:name)
         end
 end
 
