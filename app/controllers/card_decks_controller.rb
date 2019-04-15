@@ -19,7 +19,7 @@ class CardDecksController < ApplicationController
     
     private
         def cardDeck_params
-            params.require(:cardDeck).permit(:name)
+            params.require(:CardDeck).permit(:name)
         end
 end
 
