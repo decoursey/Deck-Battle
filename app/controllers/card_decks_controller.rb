@@ -6,6 +6,13 @@ class CardDecksController < ApplicationController
         @cardDeck = CardDeck.new
     end
     
+    def destroy
+        @cardDeck = CardDeck.find(params[:id])
+        @cardDeck.destroy
+        
+        redirect_to card_decks_path
+    end
+    
     def show
         @cardDeck = CardDeck.find(params[:id])
     end
