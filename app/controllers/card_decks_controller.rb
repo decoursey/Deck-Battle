@@ -1,20 +1,28 @@
 class CardDecksController < ApplicationController
-    def index
-        @cardDecks = CardDeck.all
-    end
     def new
         @cardDeck = CardDeck.new
     end
     
-    def destroy
-        @cardDeck = CardDeck.find(params[:id])
-        @cardDeck.destroy
-        
-        redirect_to card_decks_path
+    def index
+        @cardDecks = CardDeck.all
     end
     
     def show
         @cardDeck = CardDeck.find(params[:id])
+    end
+    
+    def edit
+        @cardDeck = CardDeck.find(params[:id])
+    end
+    
+    def update
+        @cardDeck = CardDeck.find(params[:id])
+        
+        if @cardDeck.update(cardDeck_params)
+            redirect_to @cardDeck
+        else
+            render 'edit'
+        end
     end
     
     def create
@@ -22,6 +30,13 @@ class CardDecksController < ApplicationController
         
         @cardDeck.save
         redirect_to @cardDeck
+    end
+    
+    def destroy
+        @cardDeck = CardDeck.find(params[:id])
+        @cardDeck.destroy
+        
+        redirect_to card_decks_path
     end
     
     private
