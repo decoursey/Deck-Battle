@@ -1,6 +1,6 @@
 class CardDecksController < ApplicationController
     def index
-        @cardDeck = CardDeck.all
+        @cardDecks = CardDeck.all
     end
     def new
         @cardDeck = CardDeck.new
