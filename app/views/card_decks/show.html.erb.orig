@@ -14,8 +14,7 @@
     </ul 
   </div>
 </div>
-</p>
-<%= link_to 'New Card', new_card_path %>
+<<<<<<< HEAD
 
 <%= link_to 'Delete Deck',
                           card_deck_path(@cardDeck),
@@ -23,3 +22,7 @@
                           data: { confirm: 'Are you sure?' } %>
 
 </p>
+=======
+</p>
+<%= link_to 'New Card', new_card_path %>
+>>>>>>> 34b6e1fe5f98ee65a0762b6ebc454dfa85030915
