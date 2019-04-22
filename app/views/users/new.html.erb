@@ -1,6 +1,8 @@
 <h1>Sign up</h1> <br>
 
 <%= form_for @user do |f| %>
+    <%= render 'shared/error_messages' %> <br>
+
     <%= f.label :name %>
     <%= f.text_field :name %> <br>
     
