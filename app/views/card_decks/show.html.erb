@@ -1,25 +1,30 @@
-<p>
 <strong>Deck Name:</strong>
-<%= @cardDeck.name %>
-</p>
-<p>
-<div class="card">
-  <%= image_tag "leonidas.jpg" %>
-  <div class="container">
-    <h4><b>Double Sword</b></h4> 
-    <ul>
-      <li>Power: 65%</li>
-      <li>Health: 400</li>
-      <li>Rarity: Common</li>
-    </ul 
-  </div>
-</div>
-</p>
+<%= @cardDeck.name %> <br><br>
+
+<!--<div class="card">-->
+<!--  <%= image_tag "leonidas.jpg" %>-->
+<!--  <div class="container">-->
+<!--    <h4><b>Double Sword</b></h4> -->
+<!--    <ul>-->
+<!--      <li>Power: 65%</li>-->
+<!--      <li>Health: 400</li>-->
+<!--      <li>Rarity: Common</li>-->
+<!--    </ul -->
+<!--  </div>-->
+<!--</div>-->
+<!--</p>-->
+
+<strong>Cards:</strong> <br>
+
+<%= @cardDeck.cards %> <br>
+<%= @cardDeck.cards.count %>
+
+<%= @cardDeck.cards.each do |card| %>
+  <li> <%= card.title %> </li> <br>
+  <li> <%= card.discription %> </li> <br>
+  <li> <%= card.stats %> </li> <br>
+  <li> <%= card.category %> </li> <br>
+  
+<% end %>
+
 <%= link_to 'New Card', new_card_path %>
-
-<%= link_to 'Delete Deck',
-                          card_deck_path(@cardDeck),
-                          method: :delete,
-                          data: { confirm: 'Are you sure?' } %>
-
-</p>
