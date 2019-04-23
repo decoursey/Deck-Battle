@@ -40,3 +40,20 @@
     </div>
   </div>
 </body>
+<strong>Deck Name:</strong>
+<%= @cardDeck.name %> <br><br>
+
+<strong>Cards:</strong> <br>
+
+<%= @cardDeck.cards %> <br>
+<%= @cardDeck.cards.count %>
+
+<%= @cardDeck.cards.each do |card| %>
+  <li> <%= card.title %> </li> <br>
+  <li> <%= card.discription %> </li> <br>
+  <li> <%= card.stats %> </li> <br>
+  <li> <%= card.category %> </li> <br>
+  
+<% end %>
+
+<%= link_to 'New Card', new_card_path %>

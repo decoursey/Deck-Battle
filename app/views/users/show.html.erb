@@ -1,5 +1,15 @@
 <b>USER</b> <br>
 <p>
     <%= @user.name %> <br>
-    <%= @user.email %>
+    <%= @user.email %> <br>
 </p>
+
+<b>DECKS</b> <br>
+
+<% @user.card_decks.each do |deck| %>
+    <li> </ul><%= deck.name %> <br>
+<% end %>
+
+<br>
+
+<%= link_to "New Deck", new_card_deck_path %>
