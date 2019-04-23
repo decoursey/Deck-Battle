@@ -11,6 +11,13 @@ class CardDecksController < ApplicationController
         @cardDeck = CardDeck.find(params[:id])
     end
     
+    def add_card
+        @cardDeck = CardDeck.find(params[:id])
+        @card = Card.find(params[:card_id])
+        
+        @cardDeck.cards << @card
+    end
+    
     def edit
         @cardDeck = CardDeck.find(params[:id])
     end
@@ -45,7 +52,7 @@ class CardDecksController < ApplicationController
     
     private
         def cardDeck_params
-            params.require(:card_deck).permit(:name, :id)
+            params.require(:card_deck).permit(:name)
         end
 end
 
