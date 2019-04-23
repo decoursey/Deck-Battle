@@ -27,21 +27,25 @@ class CardDecksController < ApplicationController
     
     def create
         @cardDeck = CardDeck.new(cardDeck_params)
+        @cardDeck.user_id = current_user.id
         
-        @cardDeck.save
-        redirect_to @cardDeck
+        if @cardDeck.save
+            redirect_to current_user
+        else
+            render 'new'
+        end
     end
     
     def destroy
         @cardDeck = CardDeck.find(params[:id])
         @cardDeck.destroy
         
-        redirect_to card_decks_path
+        redirect_to @user
     end
     
     private
         def cardDeck_params
-            params.require(:card_deck).permit(:name)
+            params.require(:card_deck).permit(:name, :id)
         end
 end
 
