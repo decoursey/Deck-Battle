@@ -13,30 +13,20 @@
   <body>
     
     <nav class="navbar navbar-light bg-light">
-      <a class="navbar-brand" href="#">Deck Battle</a>
+      <%=link_to "Deck Battle", root_url, :class => "navbar-brand" %>
       
       <% if logged_in? %>
       
         <form class="form-inline my-2 my-lg-0">
           Hello, <%= current_user.name %>!
-          
-          <button type="button" class="btn btn-secondary my-2 my-sm-0">
-            <%= link_to 'Log out', logout_path, method: :delete %>
-          </button>
+          <%= link_to 'Log out', logout_path, method: :delete, :class => "btn btn-secondary"%>
         </form>
-        
-        
         
       <% else %>
       
         <form class="form-inline my-2 my-lg-0">
-          <button type="button" class="btn btn-primary">
-            <%= link_to "Sign up", new_user_path %>
-          </button>
-        
-          <button type="button" class="btn btn-secondary">
-            <%= link_to "Log in", login_path %>
-          </button>
+          <%= link_to "Sign up", new_user_path, :class => "btn btn-primary" %>
+          <%= link_to "Log in", login_path, :class => "btn btn-secondary" %>
         </form>
         
       <% end %>
