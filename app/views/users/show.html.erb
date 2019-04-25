@@ -8,6 +8,7 @@
                 <th scope="col">Name</th>
                 <th scope="col">Cards</th>
                 <th scope="col">Point Value</th>
+                <th scope="col"></th>
             </tr>
         </thread>
         <tbody>
@@ -15,7 +16,14 @@
                 <tr>
                     <td><%= deck.name %></td>
                     <td><%= deck.cards.count %></td>
-                    <td><%= link_to "View Deck", card_deck_url(deck), :class => "btn btn-primary" %></td>
+                    <td>POINT VALUE</td>
+                    <td>
+                        <%= link_to "View Deck", card_deck_url(deck), :class => "btn btn-secondary" %>
+                        <% if @user == current_user %>
+                            <%= link_to "Edit Deck", edit_card_deck_url(deck), :class => "btn btn-primary" %>
+                        <% end %>
+                    </td>
+                    
                 </tr>
             <% end %>
         </tbody>
