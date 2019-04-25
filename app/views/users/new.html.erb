@@ -2,18 +2,27 @@
 
 <%= form_for @user do |f| %>
     <%= render 'shared/error_messages' %> <br>
-
-    <%= f.label :name %>
-    <%= f.text_field :name %> <br>
     
-    <%= f.label :email %>
-    <%= f.text_field :email %> <br>
-    
-    <%= f.label :password %>
-    <%= f.password_field :password %> <br>
-
-    <%= f.label :password_confirmation, "Confirm Password" %>
-    <%= f.password_field :password_confirmation %> <br>
-    
-    <%= f.submit "Create account" %>
+    <div class="container">
+        <div class="row">
+            <%= f.label :name %>
+            <%= f.text_field :name %>
+        </div>
+        
+        <div class="row">
+            <%= f.label :email %>
+            <%= f.text_field :email %>
+        </div>
+        <div class="row">
+            <%= f.label :password %>
+            <%= f.password_field :password %>
+        </div>
+        <div class="row">
+            <%= f.label :password_confirmation, "Confirm Password" %>
+            <%= f.password_field :password_confirmation %>
+        </div>
+        <div class="row">
+            <%= f.submit "Create account" %>
+        </div>
+    </div>
 <% end %>
