@@ -1,13 +1,7 @@
 <body>
     <h1>Deck Battle</h1>
-</body>
-
-    <% if logged_in? %>
-        <%= link_to 'View Profile', current_user, :class => "btn btn-primary" %>
-        <%= link_to 'Log out', logout_path, method: :delete, :class => "btn btn-secondary"%>
-    <% else %>
-        <%= link_to 'Sign Up!', new_user_path, :class => "btn btn-primary" %>
-        <%= link_to 'Log In', login_path, :class => "btn btn-secondary" %>
-    <% end %>
     
+    <p>
+        Deck Battle is an online trading card game. Build decks and battle other users to establish dominance.
+    </p>
 </body>
