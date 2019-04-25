@@ -10,19 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< Updated upstream
-ActiveRecord::Schema.define(version: 2019_04_22_221402) do
-=======
-ActiveRecord::Schema.define(version: 2019_04_22_215233) do
->>>>>>> Stashed changes
+ActiveRecord::Schema.define(version: 2019_04_25_014756) do
 
   create_table "card_decks", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-    t.integer "card_id"
-    t.index ["card_id"], name: "index_card_decks_on_card_id"
     t.index ["user_id"], name: "index_card_decks_on_user_id"
   end
 
@@ -38,7 +32,7 @@ ActiveRecord::Schema.define(version: 2019_04_22_215233) do
     t.datetime "updated_at", null: false
     t.string "category"
     t.string "title"
-    t.text "discription"
+    t.text "description"
     t.text "stats"
   end
 

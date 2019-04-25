@@ -1,4 +1,5 @@
 class CardDecksController < ApplicationController
+    
     def new
         @cardDeck = CardDeck.new
     end
@@ -11,6 +12,10 @@ class CardDecksController < ApplicationController
         @cardDeck = CardDeck.find(params[:id])
     end
     
+    def edit
+        @cardDeck = CardDeck.find(params[:id])
+    end
+    
     def add_card
         @cardDeck = CardDeck.find(params[:id])
         @card = Card.find(params[:card_id])
@@ -18,9 +23,6 @@ class CardDecksController < ApplicationController
         @cardDeck.cards << @card
     end
     
-    def edit
-        @cardDeck = CardDeck.find(params[:id])
-    end
     
     def update
         @cardDeck = CardDeck.find(params[:id])
