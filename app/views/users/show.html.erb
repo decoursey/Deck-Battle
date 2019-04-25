@@ -1,17 +1,32 @@
-<b>USER</b> <br>
-<p>
-    <%= @user.name %> <br>
-    <%= @user.email %> <br>
-</p>
-
-<b>DECKS</b> <br>
-
-<% @user.card_decks.each do |deck| %>
-    <li> </ul><%= deck.name %> <br>
-<% end %>
-
-<br>
-
-<% if(@user == current_user) %>
-    <%= link_to "New Deck", new_card_deck_path, :class => "btn btn-primary" %>
-<% end %>
+<div class="container center">
+    
+    <h1><%= @user.name %>'s decks</h1>
+    
+    <table class="table">
+        <thread>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Cards</th>
+                <th scope="col">Point Value</th>
+            </tr>
+        </thread>
+        <tbody>
+            <% @user.card_decks.each do |deck, count| %>
+                <tr>
+                    <th scope="row"><%= count %></th>
+                    <td><%= deck.name %></td>
+                    <td><%= deck.cards.count %></td>
+                    <td><%= link_to "View Deck", card_deck_url(deck), :class => "btn btn-primary" %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+    
+    
+    
+    
+    <% if(@user == current_user) %>
+        <%= link_to "New Deck", new_card_deck_path, :class => "btn btn-primary" %>
+    <% end %>
+</div>
