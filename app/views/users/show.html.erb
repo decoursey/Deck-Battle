@@ -5,16 +5,14 @@
     <table class="table">
         <thread>
             <tr>
-                <th scope="col">#</th>
                 <th scope="col">Name</th>
                 <th scope="col">Cards</th>
                 <th scope="col">Point Value</th>
             </tr>
         </thread>
         <tbody>
-            <% @user.card_decks.each do |deck, count| %>
+            <% @user.card_decks.each do |deck| %>
                 <tr>
-                    <th scope="row"><%= count %></th>
                     <td><%= deck.name %></td>
                     <td><%= deck.cards.count %></td>
                     <td><%= link_to "View Deck", card_deck_url(deck), :class => "btn btn-primary" %></td>
