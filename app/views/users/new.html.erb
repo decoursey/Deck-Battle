@@ -1,28 +1,22 @@
-<h1>Sign up</h1> <br>
 
-<%= form_for @user do |f| %>
+
+<%= form_for @user, :html => {:class => "form-signin text-center col-md-4 offset-md-4"} do |f| %>
+    
+    <h1>Sign up</h1>
+    
     <%= render 'shared/error_messages' %> <br>
     
-    <div class="container">
-        <div class="row">
-            <%= f.label :name %>
-            <%= f.text_field :name %>
-        </div>
-        
-        <div class="row">
-            <%= f.label :email %>
-            <%= f.text_field :email %>
-        </div>
-        <div class="row">
-            <%= f.label :password %>
-            <%= f.password_field :password %>
-        </div>
-        <div class="row">
-            <%= f.label :password_confirmation, "Confirm Password" %>
-            <%= f.password_field :password_confirmation %>
-        </div>
-        <div class="row">
-            <%= f.submit "Create account" %>
-        </div>
-    </div>
+        <%= f.label :name, "Username" %>
+        <%= f.text_field :name, :class => "form-control" %>
+    
+        <%= f.label :email %>
+        <%= f.text_field :email, :class => "form-control" %>
+    
+        <%= f.label :password %>
+        <%= f.password_field :password, :class => "form-control" %>
+    
+        <%= f.label :password_confirmation, "Confirm Password" %>
+        <%= f.password_field :password_confirmation, :class => "form-control" %>
+    
+        <%= f.submit "Create account", :class => "btn btn-lg btn-primary btn-block" %>
 <% end %>

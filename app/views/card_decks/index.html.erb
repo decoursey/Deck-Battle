@@ -1,21 +1,23 @@
-<h1>Your Decks</h1>
-<br>
-<div id="newDeck"><a><%= link_to 'New Deck', new_card_deck_path %></a></div>
-<br>
-<table>
-  <tr>
-    <th>Deck Name</th>
-  </tr>
- 
-  <% @cardDecks.each do |cardDeck| %>
-    <tr>
-      <td><%= cardDeck.name %></td>
-      <td><%= link_to 'Show', card_deck_path(cardDeck) %></td>
-      <td><%= link_to 'Edit', edit_card_deck_path(cardDeck) %></td>
-      <td><%= link_to 'Destroy',
-                                card_deck_path(cardDeck),
-                                method: :delete,
-                                data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-  <% end %>
+<h1>All Decks</h1>
+<table class="table">
+    <thread>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Cards</th>
+            <th scope="col">Point Value</th>
+            <th scope="col"></th>
+        </tr>
+    </thread>
+    <tbody>
+        <% @cardDecks.each do |deck| %>
+            <tr>
+                <td><%= deck.name %></td>
+                <td><%= deck.cards.count %></td>
+                <td>POINT VALUE</td>
+                <td>
+                    <%= link_to "View Deck", card_deck_url(deck), :class => "btn btn-secondary" %>
+                </td>
+            </tr>
+        <% end %>
+    </tbody>
 </table>
