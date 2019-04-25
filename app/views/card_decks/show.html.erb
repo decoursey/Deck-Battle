@@ -1,59 +1,8 @@
+<h1><%= @cardDeck.name %></h1>
+<h2><%= @cardDeck.cards.count %> cards</h2>
 
-<body>
-  <strong>Deck Name: <%= @cardDeck.name %></strong>
-<br>
-<br>
-
-  <div class="row">
-    <div class="column">
-      <div class="card">
-        <%= image_tag "placeholder.png" %>
-        <div class="container">
-         <h3>Card Name</h3>
-          <p>Power:</p>
-          <p>Description:</p>
-        </div>
-      </div>
-    </div>
-  
-    
-    <div class="column">
-      <div class="card">
-        <%= image_tag "placeholder.png" %>
-        <div class="container">
-          <h3>Card Name</h3>
-          <p>Power:</p>
-          <p>Description:</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="column">
-      <div class="card">
-        <%= image_tag "placeholder.png" %>
-        <div class="container">
-        <h3>Card Name</h3>
-          <p>Power:</p>
-          <p>Description:</p> 
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-<strong>Deck Name:</strong>
-<%= @cardDeck.name %> <br><br>
-
-<strong>Cards:</strong> <br>
-
-<%= @cardDeck.cards %> <br>
-<%= @cardDeck.cards.count %>
-
-<%= @cardDeck.cards.each do |card| %>
-  <li> <%= card.title %> </li> <br>
-  <li> <%= card.discription %> </li> <br>
-  <li> <%= card.stats %> </li> <br>
-  <li> <%= card.category %> </li> <br>
-  
+<% if(@cardDeck.user == current_user) %>
+  <%= link_to "Edit Deck", edit_card_deck_path(@cardDeck), :class => "btn btn-primary" %>
 <% end %>
 
-<%= link_to 'New Card', new_card_path %>
+<%= render @cardDeck.cards %>
