@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   get 'users/new'
   get 'welcome/index'
   
-  get '/card_decks/:id/add_card/:card_id',      to: 'card_decks#add_card'
+  get 'card_decks/:id/add',                     to: 'card_decks#add',       as: 'add_to_card_deck'
+  post 'card_decks/:id/add/:card_id',           to: 'card_decks#add_card',  as: 'add_card_to_card_deck'
   
   get       '/login',                           to: 'sessions#new'
   post      '/login',                           to: 'sessions#create'

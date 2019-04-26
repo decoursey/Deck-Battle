@@ -16,11 +16,20 @@ class CardDecksController < ApplicationController
         @cardDeck = CardDeck.find(params[:id])
     end
     
+    def add
+        @cards = Card.all
+    end
+    
     def add_card
         @cardDeck = CardDeck.find(params[:id])
         @card = Card.find(params[:card_id])
         
-        @cardDeck.cards << @card
+        if (@cardDeck.user == current_user)
+            @cardDeck.cards << @card
+            redirect_to @cardDeck
+        else
+            redirect_to root_url
+        end
     end
     
     
