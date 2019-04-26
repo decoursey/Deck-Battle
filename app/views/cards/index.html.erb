@@ -1,4 +1,16 @@
-<h1>All Cards</h1>
+<!DOCTYPE html>
+<html>
+<head>
+<div class="m-5 pb-5">
+<div class="jumbotron">
+  <h1 class="display-4">Cards</h1>
+  <p class="lead">Choose any of the available cards.</p>
+</div>
+</div>
+</head>
+<body>
+<div class="m-5 pb-5">
+
 <table class="table">
     <thread>
         <tr>
@@ -25,3 +37,34 @@
         <% end %>
     </tbody>
 </table>
+
+<div class="card-deck">
+    <a href="" class="custom-card">
+    <div class="card">
+    <%= image_tag("placeholder.png", class: "card-img-top") %>
+    <div class="card-body">
+      <h5 class="card-title">Archers</h5>
+      <p class="card-text">A pair of lighly armored ranged attackers. They will take down air and ground units.</p>
+       <ul class="list-group list-group-flush">
+        <li class="list-group-item">Points: 25</li>
+        <li class="list-group-item">Rarity: Rare</li>
+      </ul>
+    </div>
+  </div>
+  </a>
+  <a href="" class="custom-card">
+  <div class="card">
+    <%= image_tag("placeholder.png", class: "card-img-top") %>
+    <div class="card-body">
+      <h5 class="card-title">Spartans</h5>
+      <p class="card-text">Deploys a line of spartans armed with spears, shields, and bronze helmets.</p>
+       <ul class="list-group list-group-flush">
+        <li class="list-group-item">Points: 100</li>
+        <li class="list-group-item">Rarity: Epic</li>
+       </ul>
+    </div>
+  </div>
+   </a>
+    </div>
+  </div>
+</body>
