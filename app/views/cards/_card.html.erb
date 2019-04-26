@@ -1,11 +1,17 @@
-<div class="row">
-    <div class="column card">
-        <%= image_tag "placeholder.png" %>
-        <div class="container">
-            <h3>Card Name: <%= card.title %></h3>
-            <h3>Stats: <%= card.stats %></p>
-            <h3>Description: <%= card.description %></p>
-            <h3>Category: <%= card.category %></h3>
-        </div>
+<div class="card-deck">
+        <a href="" class="custom-card">
+            <div class="card">
+                <%= image_tag("placeholder.png", class: "card-img-top") %>
+                
+                <div class="card-body">
+                    <h5 class="card-title"><%= card.title %></h5>
+                    <p class="card-text"><%= card.description %></p>
+                    
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><%= card.stats %></li>
+                        <li class="list-group-item"><%= card.category %></li>
+                    </ul>
+                </div>
+            </div>
+        </a>
     </div>
-</div>
