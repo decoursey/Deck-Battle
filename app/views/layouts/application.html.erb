@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+  </head>
+
+  <body>
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <%=link_to "Deck Battle", root_url, :class => "navbar-brand" %>
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <%= link_to "Users", users_path, :class => "nav-item nav-link" %>
+          <%= link_to "Decks", card_decks_path, :class => "nav-item nav-link" %>
+          <%= link_to "Cards", cards_path, :class => "nav-item nav-link" %>
+          
+          <% if logged_in? %>
+            <%= link_to "Your Profile", current_user, :class => "nav-item nav-link" %>
+          <% end %>
+        </div>
+      </div>
+      
+      <% if logged_in? %>
+      
+        <form class="form-inline my-2 my-lg-0">
+          <div class="mr-3">
+            Hello, <%= current_user.name %>!
+          </div>
+          <%= link_to 'Log out', logout_path, method: :delete, :class => "btn btn-secondary mr-3"%>
+        </form>
+        
+      <% else %>
+      
+        <form class="form-inline my-2 my-lg-0">
+          <%= link_to "Sign up", new_user_path, :class => "btn btn-primary mr-3" %>
+          <%= link_to "Log in", login_path, :class => "btn btn-secondary mr-3" %>
+        </form>
+        
+      <% end %>
+    </nav>
+    
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<div class="m-5 pb-5">
+    <div class="jumbotron">
+      <h1 class="display-4">Cards</h1>
+      <p class="lead">Choose any of the available cards.</p>
+    </div>
+    
+    <div class="row">
+        <% @cards.each do |card| %>
+            <%= render card %>
+        <% end %>
+    </div>
+</div>

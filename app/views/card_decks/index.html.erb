@@ -1,0 +1,23 @@
+<h1>All Decks</h1>
+<table class="table">
+    <thread>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Cards</th>
+            <th scope="col">Point Value</th>
+            <th scope="col"></th>
+        </tr>
+    </thread>
+    <tbody>
+        <% @cardDecks.each do |deck| %>
+            <tr>
+                <td><%= deck.name %></td>
+                <td><%= deck.cards.count %></td>
+                <td>POINT VALUE</td>
+                <td>
+                    <%= link_to "View Deck", card_deck_url(deck), :class => "btn btn-primary" %>
+                </td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>

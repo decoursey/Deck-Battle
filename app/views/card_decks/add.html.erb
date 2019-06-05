@@ -1,0 +1,26 @@
+<table class="table">
+    <thread>
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Stats</th>
+            <th scope="col">Category</th>
+            <th scope="col">Point Value</th>
+            <th scope="col"></th>
+        </tr>
+    </thread>
+    <tbody>
+        <% @cards.each do |card| %>
+            <tr>
+                <td><%= card.title %></td>
+                <td><%= card.description %></td>
+                <td><%= card.stats %></td>
+                <td><%= card.category %></td>
+                <td>POINT VALUE</td>
+                <td>
+                    <%= link_to "Add Card", add_card_to_card_deck_path(:card_id => card.id), method: :post, :class => "btn btn-primary" %>
+                </td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>

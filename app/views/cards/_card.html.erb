@@ -1,0 +1,17 @@
+<div class="card-deck">
+    <%= link_to card, :class => "custom-card" do %>
+        <div class="card">
+            <%= image_tag("placeholder.png", class: "card-img-top") %>
+            
+            <div class="card-body">
+                <h5 class="card-title"><%= card.title %></h5>
+                <p class="card-text"><%= card.description %></p>
+                
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><%= card.stats %></li>
+                    <li class="list-group-item"><%= card.category %></li>
+                </ul>
+            </div>
+        </div>
+    <% end %>
+</div>

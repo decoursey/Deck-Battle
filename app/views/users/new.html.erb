@@ -1,0 +1,22 @@
+
+
+<%= form_for @user, :html => {:class => "form-signin text-center col-md-4 offset-md-4"} do |f| %>
+    
+    <h1 class="h3 mb-4 font-weight-normal">Sign up</h1>
+    
+    <%= render 'shared/error_messages' %>
+    
+    <%= f.label :name, "Username" %>
+    <%= f.text_field :name, :class => "form-control" %>
+
+    <%= f.label :email %>
+    <%= f.text_field :email, :class => "form-control" %>
+
+    <%= f.label :password %>
+    <%= f.password_field :password, :class => "form-control" %>
+
+    <%= f.label :password_confirmation, "Confirm Password" %>
+    <%= f.password_field :password_confirmation, :class => "form-control" %>
+
+    <%= f.submit "Create account", :class => "btn btn-lg btn-primary btn-block" %>
+<% end %>

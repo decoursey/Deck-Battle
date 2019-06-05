@@ -1,0 +1,23 @@
+<h1>All Users</h1>
+<table class="table">
+    <thread>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Number of Decks</th>
+            <th scope="col">Wins</th>
+            <th scope="col"></th>
+        </tr>
+    </thread>
+    <tbody>
+        <% @users.each do |user| %>
+            <tr>
+                <td><%= user.name %></td>
+                <td><%= user.card_decks.count %></td>
+                <td>WINS</td>
+                <td>
+                    <%= link_to "View User", user_url(user), :class => "btn btn-primary" %>
+                </td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>

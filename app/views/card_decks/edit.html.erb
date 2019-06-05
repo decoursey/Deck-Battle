@@ -1,0 +1,13 @@
+<body>
+<h1>Edit your Deck</h1>
+<%= form_for @cardDeck do |f| %>
+    <p>
+        <%= f.label :name %> <br>
+        <%= f.text_field :name %> <br>
+    </p>
+
+    <p>
+        <%= f.submit %>
+    </p>
+<% end %>
+

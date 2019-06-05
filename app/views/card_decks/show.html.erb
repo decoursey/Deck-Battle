@@ -1,0 +1,11 @@
+<h1><%= @cardDeck.name %></h1>
+<h2><%= @cardDeck.cards.count %> cards</h2>
+
+<% if(@cardDeck.user == current_user) %>
+  <%= link_to "Rename Deck", edit_card_deck_path(@cardDeck), :class => "btn btn-primary" %>
+  <%= link_to "Add Card", add_to_card_deck_path(@cardDeck), :class => "btn btn-primary" %>
+<% end %>
+
+<div class="row">
+  <%= render @cardDeck.cards %>
+</div>
